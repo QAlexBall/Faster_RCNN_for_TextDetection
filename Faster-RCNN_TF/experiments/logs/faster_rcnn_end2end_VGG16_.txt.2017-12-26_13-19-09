@@ -1,0 +1,328 @@
++ echo Logging output to experiments/logs/faster_rcnn_end2end_VGG16_.txt.2017-12-26_13-19-09
+Logging output to experiments/logs/faster_rcnn_end2end_VGG16_.txt.2017-12-26_13-19-09
++ python ./tools/train_net.py --device gpu --device_id 0 --weights data/pretrain_model/VGG_imagenet.npy --imdb voc_2007_trainval --iters 10000 --cfg experiments/cfgs/faster_rcnn_end2end.yml --network VGGnet_train
+voc_2007_train
+voc_2007_val
+voc_2007_trainval
+voc_2007_test
+kitti_train
+kitti_val
+kitti_trainval
+kitti_test
+nthu_71
+nthu_370
+Called with args:
+Namespace(cfg_file='experiments/cfgs/faster_rcnn_end2end.yml', device='gpu', device_id=0, imdb_name='voc_2007_trainval', max_iters=10000, network_name='VGGnet_train', pretrained_model='data/pretrain_model/VGG_imagenet.npy', randomize=False, set_cfgs=None, solver=None)
+Using config:
+{'DATA_DIR': '/home/alex/Faster-RCNN_TF/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'faster_rcnn_end2end',
+ 'GPU_ID': 0,
+ 'IS_MULTISCALE': False,
+ 'MATLAB': 'matlab',
+ 'MODELS_DIR': '/home/alex/Faster-RCNN_TF/models/pascal_voc',
+ 'PIXEL_MEANS': array([[[ 102.9801,  115.9465,  122.7717]]]),
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/alex/Faster-RCNN_TF',
+ 'TEST': {'BBOX_REG': True,
+          'DEBUG_TIMELINE': False,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'selective_search',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'DEBUG_TIMELINE': False,
+           'DISPLAY': 10,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_INFIX': '',
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_PREFIX': 'VGGnet_fast_rcnn',
+           'STEPSIZE': 50000,
+           'USE_FLIPPED': True,
+           'USE_PREFETCH': False},
+ 'USE_GPU_NMS': True}
+<bound method pascal_voc.default_roidb of <datasets.pascal_voc.pascal_voc object at 0x7f635e616fd0>>
+Loaded dataset `voc_2007_trainval` for training
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/alex/Faster-RCNN_TF/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+Output will be saved to `/home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval`
+/gpu:0
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("rpn_conv/3x3/rpn_conv/3x3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_cls_prob:0", shape=(?, ?, ?, ?), dtype=float32)
+Tensor("rpn_cls_prob_reshape:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_bbox_pred/rpn_bbox_pred:0", shape=(?, ?, ?, 36), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("rpn_rois:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+(<tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>, <tf.Tensor 'roi-data/Cast:0' shape=<unknown> dtype=int32>, <tf.Tensor 'roi-data/PyFunc:2' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:3' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:4' shape=<unknown> dtype=float32>)
+[<tf.Tensor 'conv5_3/conv5_3:0' shape=(?, ?, ?, 512) dtype=float32>, <tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>]
+Tensor("drop7/mul:0", shape=(?, 4096), dtype=float32)
+Use network `VGGnet_train` in training
+Filtered 0 roidb entries: 458 -> 458
+2017-12-26 13:19:13.408113: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-26 13:19:13.408268: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-26 13:19:13.408312: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-26 13:19:13.764990: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-12-26 13:19:13.765520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.835
+pciBusID 0000:83:00.0
+Total memory: 7.92GiB
+Free memory: 7.18GiB
+2017-12-26 13:19:13.765553: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2017-12-26 13:19:13.765573: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2017-12-26 13:19:13.765625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:83:00.0)
+Computing bounding-box regression targets...
+bbox target means:
+[[ 0.  0.  0.  0.]
+ [ 0.  0.  0.  0.]]
+[ 0.  0.  0.  0.]
+bbox target stdevs:
+[[ 0.1  0.1  0.2  0.2]
+ [ 0.1  0.1  0.2  0.2]]
+[ 0.1  0.1  0.2  0.2]
+Normalizing targets
+done
+Solving...
+/home/alex/anaconda3/envs/py27/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py:95: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Loading pretrained model weights from data/pretrain_model/VGG_imagenet.npy
+assign pretrain model weights to conv5_1
+assign pretrain model biases to conv5_1
+assign pretrain model weights to fc6
+assign pretrain model biases to fc6
+assign pretrain model weights to conv5_3
+assign pretrain model biases to conv5_3
+assign pretrain model weights to fc7
+assign pretrain model biases to fc7
+ignore fc8
+ignore fc8
+assign pretrain model weights to conv5_2
+assign pretrain model biases to conv5_2
+assign pretrain model weights to conv4_1
+assign pretrain model biases to conv4_1
+assign pretrain model weights to conv4_2
+assign pretrain model biases to conv4_2
+assign pretrain model weights to conv4_3
+assign pretrain model biases to conv4_3
+assign pretrain model weights to conv3_3
+assign pretrain model biases to conv3_3
+assign pretrain model weights to conv3_2
+assign pretrain model biases to conv3_2
+assign pretrain model weights to conv3_1
+assign pretrain model biases to conv3_1
+assign pretrain model weights to conv1_1
+assign pretrain model biases to conv1_1
+assign pretrain model weights to conv1_2
+assign pretrain model biases to conv1_2
+assign pretrain model weights to conv2_2
+assign pretrain model biases to conv2_2
+assign pretrain model weights to conv2_1
+assign pretrain model biases to conv2_1
+iter: 10 / 10000, total loss: 1.0758, rpn_loss_cls: 0.5833, rpn_loss_box: 0.0791, loss_cls: 0.2114, loss_box: 0.2020, lr: 0.001000
+speed: 0.662s / iter
+iter: 20 / 10000, total loss: 1.7098, rpn_loss_cls: 0.6205, rpn_loss_box: 0.2130, loss_cls: 0.5684, loss_box: 0.3080, lr: 0.001000
+speed: 0.549s / iter
+iter: 30 / 10000, total loss: 1.1842, rpn_loss_cls: 0.5174, rpn_loss_box: 0.5657, loss_cls: 0.1000, loss_box: 0.0011, lr: 0.001000
+speed: 0.440s / iter
+iter: 40 / 10000, total loss: 1.2740, rpn_loss_cls: 0.4424, rpn_loss_box: 0.1601, loss_cls: 0.2883, loss_box: 0.3832, lr: 0.001000
+speed: 0.387s / iter
+iter: 50 / 10000, total loss: 0.5117, rpn_loss_cls: 0.2238, rpn_loss_box: 0.0553, loss_cls: 0.1263, loss_box: 0.1062, lr: 0.001000
+speed: 0.371s / iter
+iter: 60 / 10000, total loss: 0.7588, rpn_loss_cls: 0.5573, rpn_loss_box: 0.0112, loss_cls: 0.0837, loss_box: 0.1067, lr: 0.001000
+speed: 0.364s / iter
+iter: 70 / 10000, total loss: 0.7367, rpn_loss_cls: 0.4102, rpn_loss_box: 0.1229, loss_cls: 0.1469, loss_box: 0.0567, lr: 0.001000
+speed: 0.353s / iter
+iter: 80 / 10000, total loss: 1.7115, rpn_loss_cls: 0.5432, rpn_loss_box: 0.2460, loss_cls: 0.5632, loss_box: 0.3592, lr: 0.001000
+speed: 0.348s / iter
+iter: 90 / 10000, total loss: 1.8932, rpn_loss_cls: 0.6598, rpn_loss_box: 0.1772, loss_cls: 0.5084, loss_box: 0.5478, lr: 0.001000
+speed: 0.339s / iter
+iter: 100 / 10000, total loss: 1.3082, rpn_loss_cls: 0.5579, rpn_loss_box: 0.1614, loss_cls: 0.3096, loss_box: 0.2793, lr: 0.001000
+speed: 0.333s / iter
+iter: 110 / 10000, total loss: 1.0507, rpn_loss_cls: 0.5891, rpn_loss_box: 0.3310, loss_cls: 0.1294, loss_box: 0.0012, lr: 0.001000
+speed: 0.323s / iter
+iter: 120 / 10000, total loss: 2.8174, rpn_loss_cls: 0.9315, rpn_loss_box: 1.0389, loss_cls: 0.3277, loss_box: 0.5193, lr: 0.001000
+speed: 0.315s / iter
+iter: 130 / 10000, total loss: 0.8968, rpn_loss_cls: 0.3483, rpn_loss_box: 0.1302, loss_cls: 0.2343, loss_box: 0.1840, lr: 0.001000
+speed: 0.314s / iter
+iter: 140 / 10000, total loss: 0.2957, rpn_loss_cls: 0.1501, rpn_loss_box: 0.0498, loss_cls: 0.0956, loss_box: 0.0002, lr: 0.001000
+speed: 0.314s / iter
+iter: 150 / 10000, total loss: 0.5769, rpn_loss_cls: 0.2011, rpn_loss_box: 0.0558, loss_cls: 0.1791, loss_box: 0.1409, lr: 0.001000
+speed: 0.314s / iter
+/home/alex/Faster-RCNN_TF/tools/../lib/fast_rcnn/bbox_transform.py:24: RuntimeWarning: invalid value encountered in log
+  targets_dh = np.log(gt_heights / ex_heights)
+/home/alex/Faster-RCNN_TF/tools/../lib/rpn_msr/proposal_layer_tf.py:150: RuntimeWarning: invalid value encountered in greater_equal
+  keep = np.where((ws >= min_size) & (hs >= min_size))[0]
+iter: 160 / 10000, total loss: nan, rpn_loss_cls: 0.6813, rpn_loss_box: nan, loss_cls: 0.1746, loss_box: 0.0034, lr: 0.001000
+speed: 0.312s / iter
+iter: 170 / 10000, total loss: nan, rpn_loss_cls: 0.6846, rpn_loss_box: nan, loss_cls: 0.2583, loss_box: 0.0025, lr: 0.001000
+speed: 0.306s / iter
+iter: 180 / 10000, total loss: nan, rpn_loss_cls: 0.6940, rpn_loss_box: nan, loss_cls: 0.3469, loss_box: 0.0019, lr: 0.001000
+speed: 0.300s / iter
+iter: 190 / 10000, total loss: nan, rpn_loss_cls: 0.6653, rpn_loss_box: nan, loss_cls: 0.1070, loss_box: 0.0002, lr: 0.001000
+speed: 0.294s / iter
+iter: 200 / 10000, total loss: nan, rpn_loss_cls: 0.6648, rpn_loss_box: nan, loss_cls: 0.2023, loss_box: 0.0002, lr: 0.001000
+speed: 0.294s / iter
+iter: 210 / 10000, total loss: nan, rpn_loss_cls: 0.6636, rpn_loss_box: nan, loss_cls: 0.1747, loss_box: 0.0007, lr: 0.001000
+speed: 0.289s / iter
+iter: 220 / 10000, total loss: nan, rpn_loss_cls: 0.6563, rpn_loss_box: nan, loss_cls: 0.1831, loss_box: 0.0008, lr: 0.001000
+speed: 0.284s / iter
+iter: 230 / 10000, total loss: nan, rpn_loss_cls: 0.6788, rpn_loss_box: nan, loss_cls: 0.3263, loss_box: 0.1077, lr: 0.001000
+speed: 0.280s / iter
+iter: 240 / 10000, total loss: nan, rpn_loss_cls: 0.6512, rpn_loss_box: nan, loss_cls: 0.1459, loss_box: 0.0038, lr: 0.001000
+speed: 0.280s / iter
+iter: 250 / 10000, total loss: nan, rpn_loss_cls: 0.6619, rpn_loss_box: nan, loss_cls: 0.1512, loss_box: 0.0110, lr: 0.001000
+speed: 0.276s / iter
+iter: 260 / 10000, total loss: nan, rpn_loss_cls: 0.6385, rpn_loss_box: nan, loss_cls: 0.1620, loss_box: 0.0019, lr: 0.001000
+speed: 0.273s / iter
+iter: 270 / 10000, total loss: nan, rpn_loss_cls: 0.6629, rpn_loss_box: nan, loss_cls: 0.4078, loss_box: 0.0294, lr: 0.001000
+speed: 0.270s / iter
+iter: 280 / 10000, total loss: nan, rpn_loss_cls: 0.7117, rpn_loss_box: nan, loss_cls: 0.3751, loss_box: 0.0555, lr: 0.001000
+speed: 0.270s / iter
+iter: 290 / 10000, total loss: nan, rpn_loss_cls: 0.6512, rpn_loss_box: nan, loss_cls: 0.1081, loss_box: 0.0007, lr: 0.001000
+speed: 0.267s / iter
+iter: 300 / 10000, total loss: nan, rpn_loss_cls: 0.6711, rpn_loss_box: nan, loss_cls: 0.1871, loss_box: 0.0005, lr: 0.001000
+speed: 0.266s / iter
+iter: 310 / 10000, total loss: nan, rpn_loss_cls: 0.7173, rpn_loss_box: nan, loss_cls: 0.3562, loss_box: 0.0163, lr: 0.001000
+speed: 0.264s / iter
+/home/alex/Faster-RCNN_TF/tools/../lib/fast_rcnn/bbox_transform.py:23: RuntimeWarning: invalid value encountered in log
+  targets_dw = np.log(gt_widths / ex_widths)
+iter: 320 / 10000, total loss: nan, rpn_loss_cls: 0.6323, rpn_loss_box: nan, loss_cls: 0.1035, loss_box: 0.0005, lr: 0.001000
+speed: 0.266s / iter
+iter: 330 / 10000, total loss: nan, rpn_loss_cls: 0.6262, rpn_loss_box: nan, loss_cls: 0.0909, loss_box: 0.0010, lr: 0.001000
+speed: 0.264s / iter
+iter: 340 / 10000, total loss: nan, rpn_loss_cls: 0.6042, rpn_loss_box: nan, loss_cls: 0.4614, loss_box: 0.3817, lr: 0.001000
+speed: 0.262s / iter
+iter: 350 / 10000, total loss: nan, rpn_loss_cls: 0.6849, rpn_loss_box: nan, loss_cls: 0.2862, loss_box: 0.0048, lr: 0.001000
+speed: 0.260s / iter
+iter: 360 / 10000, total loss: nan, rpn_loss_cls: 0.6271, rpn_loss_box: nan, loss_cls: 0.6367, loss_box: 0.2500, lr: 0.001000
+speed: 0.258s / iter
+iter: 370 / 10000, total loss: nan, rpn_loss_cls: 0.6294, rpn_loss_box: nan, loss_cls: 0.1152, loss_box: 0.0007, lr: 0.001000
+speed: 0.257s / iter
+iter: 380 / 10000, total loss: nan, rpn_loss_cls: 0.6287, rpn_loss_box: nan, loss_cls: 0.2841, loss_box: 0.0009, lr: 0.001000
+speed: 0.257s / iter
+iter: 390 / 10000, total loss: nan, rpn_loss_cls: 0.5912, rpn_loss_box: nan, loss_cls: 0.0667, loss_box: 0.0033, lr: 0.001000
+speed: 0.255s / iter
+iter: 400 / 10000, total loss: nan, rpn_loss_cls: 0.6219, rpn_loss_box: nan, loss_cls: 0.1049, loss_box: 0.0010, lr: 0.001000
+speed: 0.254s / iter
+iter: 410 / 10000, total loss: nan, rpn_loss_cls: 0.5860, rpn_loss_box: nan, loss_cls: 0.0934, loss_box: 0.0004, lr: 0.001000
+speed: 0.252s / iter
+iter: 420 / 10000, total loss: nan, rpn_loss_cls: 0.6315, rpn_loss_box: nan, loss_cls: 0.2448, loss_box: 0.0012, lr: 0.001000
+speed: 0.252s / iter
+iter: 430 / 10000, total loss: nan, rpn_loss_cls: 0.5750, rpn_loss_box: nan, loss_cls: 0.0669, loss_box: 0.0001, lr: 0.001000
+speed: 0.250s / iter
+iter: 440 / 10000, total loss: nan, rpn_loss_cls: 0.5858, rpn_loss_box: nan, loss_cls: 0.1094, loss_box: 0.0006, lr: 0.001000
+speed: 0.249s / iter
+iter: 450 / 10000, total loss: nan, rpn_loss_cls: 0.6567, rpn_loss_box: nan, loss_cls: 0.2311, loss_box: 0.0014, lr: 0.001000
+speed: 0.248s / iter
+iter: 460 / 10000, total loss: nan, rpn_loss_cls: 0.5530, rpn_loss_box: nan, loss_cls: 0.1075, loss_box: 0.0006, lr: 0.001000
+speed: 0.247s / iter
+iter: 470 / 10000, total loss: nan, rpn_loss_cls: 0.5652, rpn_loss_box: nan, loss_cls: 0.1103, loss_box: 0.0002, lr: 0.001000
+speed: 0.246s / iter
+iter: 480 / 10000, total loss: nan, rpn_loss_cls: 0.5585, rpn_loss_box: nan, loss_cls: 0.1117, loss_box: 0.0003, lr: 0.001000
+speed: 0.245s / iter
+iter: 490 / 10000, total loss: nan, rpn_loss_cls: 0.5478, rpn_loss_box: nan, loss_cls: 0.1300, loss_box: 0.0005, lr: 0.001000
+speed: 0.244s / iter
+iter: 500 / 10000, total loss: nan, rpn_loss_cls: 0.5678, rpn_loss_box: nan, loss_cls: 0.0959, loss_box: 0.0020, lr: 0.001000
+speed: 0.243s / iter
+iter: 510 / 10000, total loss: nan, rpn_loss_cls: 0.5631, rpn_loss_box: nan, loss_cls: 0.0888, loss_box: 0.0005, lr: 0.001000
+speed: 0.242s / iter
+iter: 520 / 10000, total loss: nan, rpn_loss_cls: 0.6509, rpn_loss_box: nan, loss_cls: 0.1645, loss_box: 0.0008, lr: 0.001000
+speed: 0.241s / iter
+iter: 530 / 10000, total loss: nan, rpn_loss_cls: 0.7150, rpn_loss_box: nan, loss_cls: 0.2514, loss_box: 0.0016, lr: 0.001000
+speed: 0.241s / iter
+iter: 540 / 10000, total loss: nan, rpn_loss_cls: 0.5934, rpn_loss_box: nan, loss_cls: 0.1663, loss_box: 0.0126, lr: 0.001000
+speed: 0.240s / iter
+iter: 550 / 10000, total loss: nan, rpn_loss_cls: 0.5730, rpn_loss_box: nan, loss_cls: 0.0992, loss_box: 0.0005, lr: 0.001000
+speed: 0.239s / iter
+iter: 560 / 10000, total loss: nan, rpn_loss_cls: 0.7409, rpn_loss_box: nan, loss_cls: 0.3359, loss_box: 0.0433, lr: 0.001000
+speed: 0.238s / iter
+iter: 570 / 10000, total loss: nan, rpn_loss_cls: 0.5483, rpn_loss_box: nan, loss_cls: 0.0956, loss_box: 0.0030, lr: 0.001000
+speed: 0.237s / iter
+iter: 580 / 10000, total loss: nan, rpn_loss_cls: 0.5313, rpn_loss_box: nan, loss_cls: 0.0616, loss_box: 0.0005, lr: 0.001000
+speed: 0.237s / iter
+iter: 590 / 10000, total loss: nan, rpn_loss_cls: 0.5384, rpn_loss_box: nan, loss_cls: 0.0586, loss_box: 0.0005, lr: 0.001000
+speed: 0.236s / iter
+iter: 600 / 10000, total loss: nan, rpn_loss_cls: 0.5347, rpn_loss_box: nan, loss_cls: 0.1502, loss_box: 0.0020, lr: 0.001000
+speed: 0.236s / iter
+iter: 610 / 10000, total loss: nan, rpn_loss_cls: 0.5277, rpn_loss_box: nan, loss_cls: 0.1344, loss_box: 0.0012, lr: 0.001000
+speed: 0.235s / iter
+iter: 620 / 10000, total loss: nan, rpn_loss_cls: 0.5472, rpn_loss_box: nan, loss_cls: 0.1441, loss_box: 0.0658, lr: 0.001000
+speed: 0.234s / iter
+iter: 630 / 10000, total loss: nan, rpn_loss_cls: 0.5639, rpn_loss_box: nan, loss_cls: 0.0844, loss_box: 0.0000, lr: 0.001000
+speed: 0.234s / iter
+iter: 640 / 10000, total loss: nan, rpn_loss_cls: 0.5830, rpn_loss_box: nan, loss_cls: 0.2793, loss_box: 0.0008, lr: 0.001000
+speed: 0.233s / iter
+iter: 650 / 10000, total loss: nan, rpn_loss_cls: 0.5131, rpn_loss_box: nan, loss_cls: 0.1107, loss_box: 0.0029, lr: 0.001000
+speed: 0.232s / iter
+iter: 660 / 10000, total loss: nan, rpn_loss_cls: 0.5424, rpn_loss_box: nan, loss_cls: 0.2130, loss_box: 0.0010, lr: 0.001000
+speed: 0.232s / iter
+iter: 670 / 10000, total loss: nan, rpn_loss_cls: 0.5656, rpn_loss_box: nan, loss_cls: 0.1016, loss_box: 0.0006, lr: 0.001000
+speed: 0.231s / iter
+iter: 680 / 10000, total loss: nan, rpn_loss_cls: 0.5824, rpn_loss_box: nan, loss_cls: 0.2020, loss_box: 0.0010, lr: 0.001000
+speed: 0.231s / iter
+iter: 690 / 10000, total loss: nan, rpn_loss_cls: 0.5849, rpn_loss_box: nan, loss_cls: 0.1125, loss_box: 0.0018, lr: 0.001000
+speed: 0.230s / iter
+iter: 700 / 10000, total loss: nan, rpn_loss_cls: 0.5085, rpn_loss_box: nan, loss_cls: 0.1127, loss_box: 0.0034, lr: 0.001000
+speed: 0.230s / iter
+iter: 710 / 10000, total loss: nan, rpn_loss_cls: 0.5451, rpn_loss_box: nan, loss_cls: 0.2384, loss_box: 0.0024, lr: 0.001000
+speed: 0.229s / iter
+iter: 720 / 10000, total loss: nan, rpn_loss_cls: 0.4859, rpn_loss_box: nan, loss_cls: 0.2196, loss_box: 0.1492, lr: 0.001000
+speed: 0.229s / iter
+iter: 730 / 10000, total loss: nan, rpn_loss_cls: 0.6440, rpn_loss_box: nan, loss_cls: 0.2040, loss_box: 0.0040, lr: 0.001000
+speed: 0.229s / iter
+out of memory
+invalid argument
+an illegal memory access was encountered
+an illegal memory access was encountered
+2017-12-26 13:24:20.627414: E tensorflow/stream_executor/cuda/cuda_event.cc:49] Error polling for event status: failed to query event: CUDA_ERROR_ILLEGAL_ADDRESS
+2017-12-26 13:24:20.627524: F tensorflow/core/common_runtime/gpu/gpu_event_mgr.cc:203] Unexpected Event status: 1
+./experiments/scripts/faster_rcnn_end2end.sh: line 57: 20405 Aborted                 (core dumped) python ./tools/train_net.py --device ${DEV} --device_id ${DEV_ID} --weights data/pretrain_model/VGG_imagenet.npy --imdb ${TRAIN_IMDB} --iters ${ITERS} --cfg experiments/cfgs/faster_rcnn_end2end.yml --network VGGnet_train ${EXTRA_ARGS}

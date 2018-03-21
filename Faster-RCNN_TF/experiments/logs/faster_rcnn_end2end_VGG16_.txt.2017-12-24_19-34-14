@@ -1,0 +1,582 @@
++ echo Logging output to experiments/logs/faster_rcnn_end2end_VGG16_.txt.2017-12-24_19-34-14
+Logging output to experiments/logs/faster_rcnn_end2end_VGG16_.txt.2017-12-24_19-34-14
++ python ./tools/train_net.py --device 0 --device_id 1 --weights data/pretrain_model/VGG_imagenet.npy --imdb voc_2007_trainval --iters 1000 --cfg experiments/cfgs/faster_rcnn_end2end.yml --network VGGnet_train
+voc_2007_train
+voc_2007_val
+voc_2007_trainval
+voc_2007_test
+kitti_train
+kitti_val
+kitti_trainval
+kitti_test
+nthu_71
+nthu_370
+Called with args:
+Namespace(cfg_file='experiments/cfgs/faster_rcnn_end2end.yml', device='0', device_id=1, imdb_name='voc_2007_trainval', max_iters=1000, network_name='VGGnet_train', pretrained_model='data/pretrain_model/VGG_imagenet.npy', randomize=False, set_cfgs=None, solver=None)
+Using config:
+{'DATA_DIR': '/home/alex/Faster-RCNN_TF/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'faster_rcnn_end2end',
+ 'GPU_ID': 0,
+ 'IS_MULTISCALE': False,
+ 'MATLAB': 'matlab',
+ 'MODELS_DIR': '/home/alex/Faster-RCNN_TF/models/pascal_voc',
+ 'PIXEL_MEANS': array([[[ 102.9801,  115.9465,  122.7717]]]),
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/alex/Faster-RCNN_TF',
+ 'TEST': {'BBOX_REG': True,
+          'DEBUG_TIMELINE': False,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'selective_search',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'DEBUG_TIMELINE': False,
+           'DISPLAY': 10,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_INFIX': '',
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_PREFIX': 'VGGnet_fast_rcnn',
+           'STEPSIZE': 50000,
+           'USE_FLIPPED': True,
+           'USE_PREFETCH': False},
+ 'USE_GPU_NMS': True}
+<bound method pascal_voc.default_roidb of <datasets.pascal_voc.pascal_voc object at 0x7fa5ee0df510>>
+Loaded dataset `voc_2007_trainval` for training
+Appending horizontally-flipped training examples...
+voc_2007_trainval gt roidb loaded from /home/alex/Faster-RCNN_TF/data/cache/voc_2007_trainval_gt_roidb.pkl
+done
+Preparing training data...
+done
+Output will be saved to `/home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval`
+/0:1
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("rpn_conv/3x3/rpn_conv/3x3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_cls_prob:0", shape=(?, ?, ?, ?), dtype=float32)
+Tensor("rpn_cls_prob_reshape:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_bbox_pred/rpn_bbox_pred:0", shape=(?, ?, ?, 36), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("rpn_rois:0", shape=(?, 5), dtype=float32)
+Tensor("Placeholder_2:0", shape=(?, 5), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+(<tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>, <tf.Tensor 'roi-data/Cast:0' shape=<unknown> dtype=int32>, <tf.Tensor 'roi-data/PyFunc:2' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:3' shape=<unknown> dtype=float32>, <tf.Tensor 'roi-data/PyFunc:4' shape=<unknown> dtype=float32>)
+[<tf.Tensor 'conv5_3/conv5_3:0' shape=(?, ?, ?, 512) dtype=float32>, <tf.Tensor 'roi-data/rois:0' shape=(?, 5) dtype=float32>]
+Tensor("drop7/mul:0", shape=(?, 4096), dtype=float32)
+Use network `VGGnet_train` in training
+Filtered 0 roidb entries: 302 -> 302
+2017-12-24 19:34:18.990123: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:34:18.990250: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:34:18.990293: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:34:19.386089: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-12-24 19:34:19.386720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.835
+pciBusID 0000:83:00.0
+Total memory: 7.92GiB
+Free memory: 7.12GiB
+2017-12-24 19:34:19.386759: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2017-12-24 19:34:19.386778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2017-12-24 19:34:19.386799: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:83:00.0)
+Computing bounding-box regression targets...
+bbox target means:
+[[ 0.  0.  0.  0.]
+ [ 0.  0.  0.  0.]]
+[ 0.  0.  0.  0.]
+bbox target stdevs:
+[[ 0.1  0.1  0.2  0.2]
+ [ 0.1  0.1  0.2  0.2]]
+[ 0.1  0.1  0.2  0.2]
+Normalizing targets
+done
+Solving...
+/home/alex/anaconda3/envs/py27/lib/python2.7/site-packages/tensorflow/python/ops/gradients_impl.py:95: UserWarning: Converting sparse IndexedSlices to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "Converting sparse IndexedSlices to a dense Tensor of unknown shape. "
+Loading pretrained model weights from data/pretrain_model/VGG_imagenet.npy
+assign pretrain model weights to conv5_1
+assign pretrain model biases to conv5_1
+assign pretrain model weights to fc6
+assign pretrain model biases to fc6
+assign pretrain model weights to conv5_3
+assign pretrain model biases to conv5_3
+assign pretrain model weights to fc7
+assign pretrain model biases to fc7
+ignore fc8
+ignore fc8
+assign pretrain model weights to conv5_2
+assign pretrain model biases to conv5_2
+assign pretrain model weights to conv4_1
+assign pretrain model biases to conv4_1
+assign pretrain model weights to conv4_2
+assign pretrain model biases to conv4_2
+assign pretrain model weights to conv4_3
+assign pretrain model biases to conv4_3
+assign pretrain model weights to conv3_3
+assign pretrain model biases to conv3_3
+assign pretrain model weights to conv3_2
+assign pretrain model biases to conv3_2
+assign pretrain model weights to conv3_1
+assign pretrain model biases to conv3_1
+assign pretrain model weights to conv1_1
+assign pretrain model biases to conv1_1
+assign pretrain model weights to conv1_2
+assign pretrain model biases to conv1_2
+assign pretrain model weights to conv2_2
+assign pretrain model biases to conv2_2
+assign pretrain model weights to conv2_1
+assign pretrain model biases to conv2_1
+iter: 10 / 1000, total loss: 2.4923, rpn_loss_cls: 0.6721, rpn_loss_box: 0.9634, loss_cls: 0.3972, loss_box: 0.4596, lr: 0.001000
+speed: 0.650s / iter
+iter: 20 / 1000, total loss: 1.8903, rpn_loss_cls: 0.4488, rpn_loss_box: 0.2123, loss_cls: 0.5556, loss_box: 0.6735, lr: 0.001000
+speed: 0.477s / iter
+iter: 30 / 1000, total loss: 1.2024, rpn_loss_cls: 0.2745, rpn_loss_box: 0.1589, loss_cls: 0.4953, loss_box: 0.2738, lr: 0.001000
+speed: 0.452s / iter
+iter: 40 / 1000, total loss: 1.6005, rpn_loss_cls: 0.4593, rpn_loss_box: 0.0266, loss_cls: 0.5605, loss_box: 0.5541, lr: 0.001000
+speed: 0.413s / iter
+iter: 50 / 1000, total loss: 0.2536, rpn_loss_cls: 0.1853, rpn_loss_box: 0.0595, loss_cls: 0.0074, loss_box: 0.0013, lr: 0.001000
+speed: 0.394s / iter
+iter: 60 / 1000, total loss: 1.5323, rpn_loss_cls: 0.7004, rpn_loss_box: 0.6128, loss_cls: 0.1237, loss_box: 0.0954, lr: 0.001000
+speed: 0.384s / iter
+iter: 70 / 1000, total loss: 0.6548, rpn_loss_cls: 0.1006, rpn_loss_box: 0.0269, loss_cls: 0.2044, loss_box: 0.3229, lr: 0.001000
+speed: 0.362s / iter
+iter: 80 / 1000, total loss: 2.1531, rpn_loss_cls: 0.6676, rpn_loss_box: 1.2711, loss_cls: 0.1944, loss_box: 0.0200, lr: 0.001000
+speed: 0.366s / iter
+iter: 90 / 1000, total loss: 0.5923, rpn_loss_cls: 0.4932, rpn_loss_box: 0.0277, loss_cls: 0.0453, loss_box: 0.0261, lr: 0.001000
+speed: 0.349s / iter
+iter: 100 / 1000, total loss: 2.4472, rpn_loss_cls: 0.7109, rpn_loss_box: 0.5248, loss_cls: 0.6678, loss_box: 0.5437, lr: 0.001000
+speed: 0.337s / iter
+iter: 110 / 1000, total loss: 1.2917, rpn_loss_cls: 0.4208, rpn_loss_box: 0.2064, loss_cls: 0.3344, loss_box: 0.3300, lr: 0.001000
+speed: 0.336s / iter
+iter: 120 / 1000, total loss: 0.6368, rpn_loss_cls: 0.4061, rpn_loss_box: 0.0277, loss_cls: 0.1316, loss_box: 0.0715, lr: 0.001000
+speed: 0.333s / iter
+iter: 130 / 1000, total loss: 1.1216, rpn_loss_cls: 0.1753, rpn_loss_box: 0.0268, loss_cls: 0.3444, loss_box: 0.5751, lr: 0.001000
+speed: 0.325s / iter
+iter: 140 / 1000, total loss: 1.2564, rpn_loss_cls: 0.1024, rpn_loss_box: 0.9047, loss_cls: 0.2250, loss_box: 0.0243, lr: 0.001000
+speed: 0.322s / iter
+iter: 150 / 1000, total loss: 2.1091, rpn_loss_cls: 0.7419, rpn_loss_box: 1.0357, loss_cls: 0.2940, loss_box: 0.0376, lr: 0.001000
+speed: 0.315s / iter
+iter: 160 / 1000, total loss: 1.3021, rpn_loss_cls: 0.5588, rpn_loss_box: 0.0590, loss_cls: 0.3123, loss_box: 0.3720, lr: 0.001000
+speed: 0.313s / iter
+iter: 170 / 1000, total loss: 1.0364, rpn_loss_cls: 0.5396, rpn_loss_box: 0.0564, loss_cls: 0.2467, loss_box: 0.1937, lr: 0.001000
+speed: 0.308s / iter
+iter: 180 / 1000, total loss: 1.1126, rpn_loss_cls: 0.2860, rpn_loss_box: 0.1120, loss_cls: 0.3899, loss_box: 0.3247, lr: 0.001000
+speed: 0.303s / iter
+iter: 190 / 1000, total loss: 1.3203, rpn_loss_cls: 0.5815, rpn_loss_box: 0.5044, loss_cls: 0.1756, loss_box: 0.0587, lr: 0.001000
+speed: 0.299s / iter
+iter: 200 / 1000, total loss: 1.1782, rpn_loss_cls: 0.5360, rpn_loss_box: 0.3664, loss_cls: 0.1822, loss_box: 0.0937, lr: 0.001000
+speed: 0.295s / iter
+iter: 210 / 1000, total loss: 0.9323, rpn_loss_cls: 0.4384, rpn_loss_box: 0.0661, loss_cls: 0.2311, loss_box: 0.1966, lr: 0.001000
+speed: 0.291s / iter
+iter: 220 / 1000, total loss: 2.1257, rpn_loss_cls: 0.6714, rpn_loss_box: 0.8131, loss_cls: 0.6394, loss_box: 0.0017, lr: 0.001000
+speed: 0.289s / iter
+iter: 230 / 1000, total loss: 0.9571, rpn_loss_cls: 0.2678, rpn_loss_box: 0.3519, loss_cls: 0.1715, loss_box: 0.1660, lr: 0.001000
+speed: 0.285s / iter
+iter: 240 / 1000, total loss: 1.3233, rpn_loss_cls: 0.4378, rpn_loss_box: 0.2458, loss_cls: 0.3060, loss_box: 0.3338, lr: 0.001000
+speed: 0.282s / iter
+iter: 250 / 1000, total loss: 0.6572, rpn_loss_cls: 0.4574, rpn_loss_box: 0.1194, loss_cls: 0.0795, loss_box: 0.0009, lr: 0.001000
+speed: 0.281s / iter
+iter: 260 / 1000, total loss: 1.7857, rpn_loss_cls: 0.4601, rpn_loss_box: 0.2665, loss_cls: 0.5220, loss_box: 0.5370, lr: 0.001000
+speed: 0.278s / iter
+iter: 270 / 1000, total loss: 0.7601, rpn_loss_cls: 0.3376, rpn_loss_box: 0.0127, loss_cls: 0.2402, loss_box: 0.1696, lr: 0.001000
+speed: 0.276s / iter
+iter: 280 / 1000, total loss: 0.3948, rpn_loss_cls: 0.1991, rpn_loss_box: 0.0027, loss_cls: 0.1247, loss_box: 0.0683, lr: 0.001000
+speed: 0.274s / iter
+iter: 290 / 1000, total loss: 0.8390, rpn_loss_cls: 0.2845, rpn_loss_box: 0.2921, loss_cls: 0.1233, loss_box: 0.1391, lr: 0.001000
+speed: 0.273s / iter
+iter: 300 / 1000, total loss: 0.5369, rpn_loss_cls: 0.1784, rpn_loss_box: 0.1448, loss_cls: 0.0729, loss_box: 0.1409, lr: 0.001000
+speed: 0.271s / iter
+iter: 310 / 1000, total loss: 0.7703, rpn_loss_cls: 0.3296, rpn_loss_box: 0.0313, loss_cls: 0.1447, loss_box: 0.2647, lr: 0.001000
+speed: 0.269s / iter
+iter: 320 / 1000, total loss: 0.7091, rpn_loss_cls: 0.0873, rpn_loss_box: 0.1017, loss_cls: 0.1395, loss_box: 0.3806, lr: 0.001000
+speed: 0.268s / iter
+iter: 330 / 1000, total loss: 0.7576, rpn_loss_cls: 0.2596, rpn_loss_box: 0.0864, loss_cls: 0.1319, loss_box: 0.2797, lr: 0.001000
+speed: 0.266s / iter
+iter: 340 / 1000, total loss: 1.7820, rpn_loss_cls: 0.5390, rpn_loss_box: 0.2977, loss_cls: 0.4890, loss_box: 0.4563, lr: 0.001000
+speed: 0.265s / iter
+iter: 350 / 1000, total loss: 1.8325, rpn_loss_cls: 0.5242, rpn_loss_box: 1.1814, loss_cls: 0.1224, loss_box: 0.0046, lr: 0.001000
+speed: 0.264s / iter
+iter: 360 / 1000, total loss: 0.4769, rpn_loss_cls: 0.1483, rpn_loss_box: 0.0713, loss_cls: 0.0997, loss_box: 0.1576, lr: 0.001000
+speed: 0.263s / iter
+iter: 370 / 1000, total loss: 1.0837, rpn_loss_cls: 0.1789, rpn_loss_box: 0.0520, loss_cls: 0.2255, loss_box: 0.6272, lr: 0.001000
+speed: 0.261s / iter
+iter: 380 / 1000, total loss: 0.2816, rpn_loss_cls: 0.0979, rpn_loss_box: 0.0029, loss_cls: 0.1497, loss_box: 0.0311, lr: 0.001000
+speed: 0.260s / iter
+iter: 390 / 1000, total loss: 0.7000, rpn_loss_cls: 0.3146, rpn_loss_box: 0.1087, loss_cls: 0.1164, loss_box: 0.1604, lr: 0.001000
+speed: 0.259s / iter
+iter: 400 / 1000, total loss: 0.4767, rpn_loss_cls: 0.2145, rpn_loss_box: 0.1458, loss_cls: 0.0997, loss_box: 0.0167, lr: 0.001000
+speed: 0.258s / iter
+iter: 410 / 1000, total loss: 0.5320, rpn_loss_cls: 0.1711, rpn_loss_box: 0.0296, loss_cls: 0.1853, loss_box: 0.1460, lr: 0.001000
+speed: 0.257s / iter
+iter: 420 / 1000, total loss: 1.0433, rpn_loss_cls: 0.1603, rpn_loss_box: 0.1507, loss_cls: 0.2350, loss_box: 0.4973, lr: 0.001000
+speed: 0.257s / iter
+iter: 430 / 1000, total loss: 0.7563, rpn_loss_cls: 0.2061, rpn_loss_box: 0.0416, loss_cls: 0.2757, loss_box: 0.2329, lr: 0.001000
+speed: 0.256s / iter
+iter: 440 / 1000, total loss: 1.5813, rpn_loss_cls: 0.5304, rpn_loss_box: 0.4586, loss_cls: 0.3695, loss_box: 0.2228, lr: 0.001000
+speed: 0.255s / iter
+iter: 450 / 1000, total loss: 0.6292, rpn_loss_cls: 0.1891, rpn_loss_box: 0.0367, loss_cls: 0.1526, loss_box: 0.2508, lr: 0.001000
+speed: 0.254s / iter
+iter: 460 / 1000, total loss: 0.6217, rpn_loss_cls: 0.2029, rpn_loss_box: 0.0478, loss_cls: 0.1781, loss_box: 0.1929, lr: 0.001000
+speed: 0.253s / iter
+iter: 470 / 1000, total loss: 1.3457, rpn_loss_cls: 0.4378, rpn_loss_box: 0.1604, loss_cls: 0.2763, loss_box: 0.4712, lr: 0.001000
+speed: 0.253s / iter
+iter: 480 / 1000, total loss: 0.5771, rpn_loss_cls: 0.1159, rpn_loss_box: 0.1155, loss_cls: 0.1310, loss_box: 0.2146, lr: 0.001000
+speed: 0.252s / iter
+iter: 490 / 1000, total loss: 0.7723, rpn_loss_cls: 0.1916, rpn_loss_box: 0.0821, loss_cls: 0.2053, loss_box: 0.2934, lr: 0.001000
+speed: 0.251s / iter
+iter: 500 / 1000, total loss: 0.4304, rpn_loss_cls: 0.1625, rpn_loss_box: 0.1452, loss_cls: 0.0824, loss_box: 0.0403, lr: 0.001000
+speed: 0.251s / iter
+iter: 510 / 1000, total loss: 0.7374, rpn_loss_cls: 0.2339, rpn_loss_box: 0.2345, loss_cls: 0.1303, loss_box: 0.1388, lr: 0.001000
+speed: 0.250s / iter
+iter: 520 / 1000, total loss: 0.7947, rpn_loss_cls: 0.2300, rpn_loss_box: 0.1079, loss_cls: 0.2179, loss_box: 0.2389, lr: 0.001000
+speed: 0.250s / iter
+iter: 530 / 1000, total loss: 0.8343, rpn_loss_cls: 0.5405, rpn_loss_box: 0.0243, loss_cls: 0.1200, loss_box: 0.1494, lr: 0.001000
+speed: 0.249s / iter
+iter: 540 / 1000, total loss: 1.8387, rpn_loss_cls: 0.4397, rpn_loss_box: 0.3314, loss_cls: 0.5030, loss_box: 0.5647, lr: 0.001000
+speed: 0.248s / iter
+iter: 550 / 1000, total loss: 1.4750, rpn_loss_cls: 0.3228, rpn_loss_box: 0.2365, loss_cls: 0.4246, loss_box: 0.4911, lr: 0.001000
+speed: 0.248s / iter
+iter: 560 / 1000, total loss: 0.5043, rpn_loss_cls: 0.1969, rpn_loss_box: 0.1761, loss_cls: 0.0789, loss_box: 0.0524, lr: 0.001000
+speed: 0.247s / iter
+iter: 570 / 1000, total loss: 0.7464, rpn_loss_cls: 0.3217, rpn_loss_box: 0.0228, loss_cls: 0.2247, loss_box: 0.1772, lr: 0.001000
+speed: 0.247s / iter
+iter: 580 / 1000, total loss: 0.9901, rpn_loss_cls: 0.1966, rpn_loss_box: 0.2167, loss_cls: 0.2353, loss_box: 0.3415, lr: 0.001000
+speed: 0.246s / iter
+iter: 590 / 1000, total loss: 0.3198, rpn_loss_cls: 0.1890, rpn_loss_box: 0.0242, loss_cls: 0.0516, loss_box: 0.0550, lr: 0.001000
+speed: 0.246s / iter
+iter: 600 / 1000, total loss: 1.0352, rpn_loss_cls: 0.1449, rpn_loss_box: 0.1012, loss_cls: 0.2616, loss_box: 0.5275, lr: 0.001000
+speed: 0.245s / iter
+iter: 610 / 1000, total loss: 1.2804, rpn_loss_cls: 0.2495, rpn_loss_box: 0.5333, loss_cls: 0.1757, loss_box: 0.3219, lr: 0.001000
+speed: 0.245s / iter
+iter: 620 / 1000, total loss: 1.8491, rpn_loss_cls: 0.4818, rpn_loss_box: 0.5072, loss_cls: 0.3857, loss_box: 0.4743, lr: 0.001000
+speed: 0.245s / iter
+iter: 630 / 1000, total loss: 0.3752, rpn_loss_cls: 0.0401, rpn_loss_box: 0.0130, loss_cls: 0.0951, loss_box: 0.2270, lr: 0.001000
+speed: 0.244s / iter
+iter: 640 / 1000, total loss: 1.1433, rpn_loss_cls: 0.4474, rpn_loss_box: 0.5727, loss_cls: 0.1225, loss_box: 0.0007, lr: 0.001000
+speed: 0.244s / iter
+iter: 650 / 1000, total loss: 0.4752, rpn_loss_cls: 0.1303, rpn_loss_box: 0.0125, loss_cls: 0.0929, loss_box: 0.2395, lr: 0.001000
+speed: 0.244s / iter
+iter: 660 / 1000, total loss: 0.4251, rpn_loss_cls: 0.0521, rpn_loss_box: 0.0114, loss_cls: 0.1481, loss_box: 0.2135, lr: 0.001000
+speed: 0.243s / iter
+iter: 670 / 1000, total loss: 0.3848, rpn_loss_cls: 0.0314, rpn_loss_box: 0.0142, loss_cls: 0.0808, loss_box: 0.2584, lr: 0.001000
+speed: 0.243s / iter
+iter: 680 / 1000, total loss: 0.3563, rpn_loss_cls: 0.2456, rpn_loss_box: 0.0552, loss_cls: 0.0524, loss_box: 0.0031, lr: 0.001000
+speed: 0.243s / iter
+iter: 690 / 1000, total loss: 0.6117, rpn_loss_cls: 0.2663, rpn_loss_box: 0.0847, loss_cls: 0.1084, loss_box: 0.1524, lr: 0.001000
+speed: 0.242s / iter
+iter: 700 / 1000, total loss: 1.0866, rpn_loss_cls: 0.1616, rpn_loss_box: 0.0515, loss_cls: 0.3598, loss_box: 0.5138, lr: 0.001000
+speed: 0.242s / iter
+iter: 710 / 1000, total loss: 0.8169, rpn_loss_cls: 0.1920, rpn_loss_box: 0.0379, loss_cls: 0.1805, loss_box: 0.4065, lr: 0.001000
+speed: 0.242s / iter
+iter: 720 / 1000, total loss: 0.9820, rpn_loss_cls: 0.2703, rpn_loss_box: 0.0911, loss_cls: 0.1699, loss_box: 0.4506, lr: 0.001000
+speed: 0.241s / iter
+iter: 730 / 1000, total loss: 1.0668, rpn_loss_cls: 0.2004, rpn_loss_box: 0.0489, loss_cls: 0.3835, loss_box: 0.4341, lr: 0.001000
+speed: 0.241s / iter
+iter: 740 / 1000, total loss: 0.8890, rpn_loss_cls: 0.1764, rpn_loss_box: 0.0705, loss_cls: 0.1707, loss_box: 0.4714, lr: 0.001000
+speed: 0.241s / iter
+iter: 750 / 1000, total loss: 0.5423, rpn_loss_cls: 0.0826, rpn_loss_box: 0.0355, loss_cls: 0.2336, loss_box: 0.1906, lr: 0.001000
+speed: 0.241s / iter
+iter: 760 / 1000, total loss: 1.3263, rpn_loss_cls: 0.2332, rpn_loss_box: 0.3271, loss_cls: 0.2957, loss_box: 0.4703, lr: 0.001000
+speed: 0.240s / iter
+iter: 770 / 1000, total loss: 1.2786, rpn_loss_cls: 0.2467, rpn_loss_box: 0.1864, loss_cls: 0.3948, loss_box: 0.4507, lr: 0.001000
+speed: 0.240s / iter
+iter: 780 / 1000, total loss: 1.0090, rpn_loss_cls: 0.0960, rpn_loss_box: 0.0776, loss_cls: 0.2465, loss_box: 0.5890, lr: 0.001000
+speed: 0.240s / iter
+iter: 790 / 1000, total loss: 0.8016, rpn_loss_cls: 0.1495, rpn_loss_box: 0.1230, loss_cls: 0.2130, loss_box: 0.3161, lr: 0.001000
+speed: 0.240s / iter
+iter: 800 / 1000, total loss: 0.5831, rpn_loss_cls: 0.1156, rpn_loss_box: 0.0830, loss_cls: 0.1753, loss_box: 0.2092, lr: 0.001000
+speed: 0.240s / iter
+iter: 810 / 1000, total loss: 0.8445, rpn_loss_cls: 0.1701, rpn_loss_box: 0.0948, loss_cls: 0.2090, loss_box: 0.3706, lr: 0.001000
+speed: 0.239s / iter
+iter: 820 / 1000, total loss: 0.3507, rpn_loss_cls: 0.0337, rpn_loss_box: 0.0380, loss_cls: 0.1054, loss_box: 0.1736, lr: 0.001000
+speed: 0.239s / iter
+iter: 830 / 1000, total loss: 1.0663, rpn_loss_cls: 0.2190, rpn_loss_box: 0.0726, loss_cls: 0.2780, loss_box: 0.4967, lr: 0.001000
+speed: 0.239s / iter
+iter: 840 / 1000, total loss: 0.2441, rpn_loss_cls: 0.1452, rpn_loss_box: 0.0570, loss_cls: 0.0372, loss_box: 0.0048, lr: 0.001000
+speed: 0.238s / iter
+iter: 850 / 1000, total loss: 0.9751, rpn_loss_cls: 0.1769, rpn_loss_box: 0.1024, loss_cls: 0.1494, loss_box: 0.5464, lr: 0.001000
+speed: 0.238s / iter
+iter: 860 / 1000, total loss: 0.2924, rpn_loss_cls: 0.0860, rpn_loss_box: 0.0350, loss_cls: 0.1145, loss_box: 0.0569, lr: 0.001000
+speed: 0.238s / iter
+iter: 870 / 1000, total loss: 1.5060, rpn_loss_cls: 0.3793, rpn_loss_box: 0.8975, loss_cls: 0.2041, loss_box: 0.0251, lr: 0.001000
+speed: 0.238s / iter
+iter: 880 / 1000, total loss: 1.1059, rpn_loss_cls: 0.2928, rpn_loss_box: 0.0879, loss_cls: 0.2056, loss_box: 0.5195, lr: 0.001000
+speed: 0.238s / iter
+iter: 890 / 1000, total loss: 1.3657, rpn_loss_cls: 0.5657, rpn_loss_box: 0.1092, loss_cls: 0.2691, loss_box: 0.4217, lr: 0.001000
+speed: 0.237s / iter
+iter: 900 / 1000, total loss: 0.3184, rpn_loss_cls: 0.1598, rpn_loss_box: 0.0573, loss_cls: 0.0412, loss_box: 0.0602, lr: 0.001000
+speed: 0.237s / iter
+iter: 910 / 1000, total loss: 0.4154, rpn_loss_cls: 0.1209, rpn_loss_box: 0.0763, loss_cls: 0.0737, loss_box: 0.1445, lr: 0.001000
+speed: 0.237s / iter
+iter: 920 / 1000, total loss: 0.5965, rpn_loss_cls: 0.1329, rpn_loss_box: 0.1355, loss_cls: 0.1493, loss_box: 0.1788, lr: 0.001000
+speed: 0.237s / iter
+iter: 930 / 1000, total loss: 1.4604, rpn_loss_cls: 0.3501, rpn_loss_box: 0.5793, loss_cls: 0.2636, loss_box: 0.2674, lr: 0.001000
+speed: 0.237s / iter
+iter: 940 / 1000, total loss: 0.4379, rpn_loss_cls: 0.1732, rpn_loss_box: 0.0115, loss_cls: 0.1415, loss_box: 0.1117, lr: 0.001000
+speed: 0.236s / iter
+iter: 950 / 1000, total loss: 0.8074, rpn_loss_cls: 0.2012, rpn_loss_box: 0.0774, loss_cls: 0.2040, loss_box: 0.3248, lr: 0.001000
+speed: 0.236s / iter
+iter: 960 / 1000, total loss: 0.7931, rpn_loss_cls: 0.2051, rpn_loss_box: 0.0585, loss_cls: 0.1189, loss_box: 0.4105, lr: 0.001000
+speed: 0.236s / iter
+iter: 970 / 1000, total loss: 1.2838, rpn_loss_cls: 0.2665, rpn_loss_box: 0.5500, loss_cls: 0.1606, loss_box: 0.3067, lr: 0.001000
+speed: 0.236s / iter
+iter: 980 / 1000, total loss: 0.8498, rpn_loss_cls: 0.1222, rpn_loss_box: 0.0411, loss_cls: 0.1977, loss_box: 0.4888, lr: 0.001000
+speed: 0.236s / iter
+iter: 990 / 1000, total loss: 1.0142, rpn_loss_cls: 0.2258, rpn_loss_box: 0.1397, loss_cls: 0.2736, loss_box: 0.3751, lr: 0.001000
+speed: 0.236s / iter
+iter: 1000 / 1000, total loss: 0.4405, rpn_loss_cls: 0.0865, rpn_loss_box: 0.0642, loss_cls: 0.1009, loss_box: 0.1889, lr: 0.001000
+speed: 0.235s / iter
+Wrote snapshot to: /home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval/VGGnet_fast_rcnn_iter_1000.ckpt
+done solving
+
+real	7m30.869s
+user	6m32.304s
+sys	1m0.984s
++ set +x
++ python ./tools/test_net.py --device 0 --device_id 1 --weights /home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval/VGGnet_fast_rcnn_iter_1000.ckpt --imdb voc_2007_test --cfg experiments/cfgs/faster_rcnn_end2end.yml --network VGGnet_test
+voc_2007_train
+voc_2007_val
+voc_2007_trainval
+voc_2007_test
+kitti_train
+kitti_val
+kitti_trainval
+kitti_test
+nthu_71
+nthu_370
+Called with args:
+Namespace(cfg_file='experiments/cfgs/faster_rcnn_end2end.yml', comp_mode=False, device='0', device_id=1, imdb_name='voc_2007_test', model='/home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval/VGGnet_fast_rcnn_iter_1000.ckpt', network_name='VGGnet_test', prototxt=None, wait=True)
+Using config:
+{'DATA_DIR': '/home/alex/Faster-RCNN_TF/data',
+ 'DEDUP_BOXES': 0.0625,
+ 'EPS': 1e-14,
+ 'EXP_DIR': 'faster_rcnn_end2end',
+ 'GPU_ID': 0,
+ 'IS_MULTISCALE': False,
+ 'MATLAB': 'matlab',
+ 'MODELS_DIR': '/home/alex/Faster-RCNN_TF/models/pascal_voc',
+ 'PIXEL_MEANS': array([[[ 102.9801,  115.9465,  122.7717]]]),
+ 'RNG_SEED': 3,
+ 'ROOT_DIR': '/home/alex/Faster-RCNN_TF',
+ 'TEST': {'BBOX_REG': True,
+          'DEBUG_TIMELINE': False,
+          'HAS_RPN': True,
+          'MAX_SIZE': 1000,
+          'NMS': 0.3,
+          'PROPOSAL_METHOD': 'selective_search',
+          'RPN_MIN_SIZE': 16,
+          'RPN_NMS_THRESH': 0.7,
+          'RPN_POST_NMS_TOP_N': 300,
+          'RPN_PRE_NMS_TOP_N': 6000,
+          'SCALES': [600],
+          'SVM': False},
+ 'TRAIN': {'ASPECT_GROUPING': True,
+           'BATCH_SIZE': 128,
+           'BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'BBOX_NORMALIZE_MEANS': [0.0, 0.0, 0.0, 0.0],
+           'BBOX_NORMALIZE_STDS': [0.1, 0.1, 0.2, 0.2],
+           'BBOX_NORMALIZE_TARGETS': True,
+           'BBOX_NORMALIZE_TARGETS_PRECOMPUTED': True,
+           'BBOX_REG': True,
+           'BBOX_THRESH': 0.5,
+           'BG_THRESH_HI': 0.5,
+           'BG_THRESH_LO': 0.0,
+           'DEBUG_TIMELINE': False,
+           'DISPLAY': 10,
+           'FG_FRACTION': 0.25,
+           'FG_THRESH': 0.5,
+           'GAMMA': 0.1,
+           'HAS_RPN': True,
+           'IMS_PER_BATCH': 1,
+           'LEARNING_RATE': 0.001,
+           'MAX_SIZE': 1000,
+           'MOMENTUM': 0.9,
+           'PROPOSAL_METHOD': 'gt',
+           'RPN_BATCHSIZE': 256,
+           'RPN_BBOX_INSIDE_WEIGHTS': [1.0, 1.0, 1.0, 1.0],
+           'RPN_CLOBBER_POSITIVES': False,
+           'RPN_FG_FRACTION': 0.5,
+           'RPN_MIN_SIZE': 16,
+           'RPN_NEGATIVE_OVERLAP': 0.3,
+           'RPN_NMS_THRESH': 0.7,
+           'RPN_POSITIVE_OVERLAP': 0.7,
+           'RPN_POSITIVE_WEIGHT': -1.0,
+           'RPN_POST_NMS_TOP_N': 2000,
+           'RPN_PRE_NMS_TOP_N': 12000,
+           'SCALES': [600],
+           'SNAPSHOT_INFIX': '',
+           'SNAPSHOT_ITERS': 5000,
+           'SNAPSHOT_PREFIX': 'VGGnet_fast_rcnn',
+           'STEPSIZE': 50000,
+           'USE_FLIPPED': True,
+           'USE_PREFETCH': False},
+ 'USE_GPU_NMS': True}
+<bound method pascal_voc.default_roidb of <datasets.pascal_voc.pascal_voc object at 0x7fd23f76f490>>
+/0:1
+Tensor("Placeholder:0", shape=(?, ?, ?, 3), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_conv/3x3/rpn_conv/3x3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rpn_cls_score/rpn_cls_score:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_cls_prob:0", shape=(?, ?, ?, ?), dtype=float32)
+Tensor("rpn_cls_prob_reshape:0", shape=(?, ?, ?, 18), dtype=float32)
+Tensor("rpn_bbox_pred/rpn_bbox_pred:0", shape=(?, ?, ?, 36), dtype=float32)
+Tensor("Placeholder_1:0", shape=(?, 3), dtype=float32)
+Tensor("conv5_3/conv5_3:0", shape=(?, ?, ?, 512), dtype=float32)
+Tensor("rois:0", shape=(?, 5), dtype=float32)
+[<tf.Tensor 'conv5_3/conv5_3:0' shape=(?, ?, ?, 512) dtype=float32>, <tf.Tensor 'rois:0' shape=(?, 5) dtype=float32>]
+Tensor("fc7/fc7:0", shape=(?, 4096), dtype=float32)
+Use network `VGGnet_test` in training
+2017-12-24 19:41:48.279119: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:41:48.279188: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:41:48.279199: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-12-24 19:41:48.620999: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2017-12-24 19:41:48.621728: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.835
+pciBusID 0000:83:00.0
+Total memory: 7.92GiB
+Free memory: 7.12GiB
+2017-12-24 19:41:48.621768: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0 
+2017-12-24 19:41:48.621787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y 
+2017-12-24 19:41:48.621809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:83:00.0)
+Loading model weights from /home/alex/Faster-RCNN_TF/output/faster_rcnn_end2end/voc_2007_trainval/VGGnet_fast_rcnn_iter_1000.ckpt
+im_detect: 1/78 2.617s 0.000s
+im_detect: 2/78 1.405s 0.000s
+im_detect: 3/78 1.006s 0.000s
+im_detect: 4/78 0.953s 0.000s
+im_detect: 5/78 0.822s 0.000s
+im_detect: 6/78 0.737s 0.000s
+im_detect: 7/78 0.802s 0.000s
+im_detect: 8/78 0.724s 0.000s
+im_detect: 9/78 0.662s 0.000s
+im_detect: 10/78 0.630s 0.000s
+im_detect: 11/78 0.637s 0.000s
+im_detect: 12/78 0.604s 0.000s
+im_detect: 13/78 0.587s 0.000s
+im_detect: 14/78 0.563s 0.000s
+im_detect: 15/78 0.569s 0.000s
+im_detect: 16/78 0.592s 0.000s
+im_detect: 17/78 0.570s 0.000s
+im_detect: 18/78 0.552s 0.000s
+im_detect: 19/78 0.550s 0.000s
+im_detect: 20/78 0.554s 0.000s
+im_detect: 21/78 0.537s 0.000s
+im_detect: 22/78 0.547s 0.000s
+im_detect: 23/78 0.533s 0.000s
+im_detect: 24/78 0.525s 0.000s
+im_detect: 25/78 0.525s 0.000s
+im_detect: 26/78 0.512s 0.000s
+im_detect: 27/78 0.500s 0.000s
+im_detect: 28/78 0.490s 0.000s
+im_detect: 29/78 0.485s 0.000s
+im_detect: 30/78 0.477s 0.000s
+im_detect: 31/78 0.470s 0.000s
+im_detect: 32/78 0.462s 0.000s
+im_detect: 33/78 0.470s 0.000s
+im_detect: 34/78 0.462s 0.000s
+im_detect: 35/78 0.456s 0.000s
+im_detect: 36/78 0.448s 0.000s
+im_detect: 37/78 0.443s 0.000s
+im_detect: 38/78 0.454s 0.000s
+im_detect: 39/78 0.449s 0.000s
+im_detect: 40/78 0.445s 0.000s
+im_detect: 41/78 0.440s 0.000s
+im_detect: 42/78 0.435s 0.000s
+im_detect: 43/78 0.437s 0.000s
+im_detect: 44/78 0.440s 0.000s
+im_detect: 45/78 0.443s 0.000s
+im_detect: 46/78 0.438s 0.000s
+im_detect: 47/78 0.433s 0.000s
+im_detect: 48/78 0.429s 0.000s
+im_detect: 49/78 0.431s 0.000s
+im_detect: 50/78 0.427s 0.000s
+im_detect: 51/78 0.423s 0.000s
+im_detect: 52/78 0.419s 0.000s
+im_detect: 53/78 0.415s 0.000s
+im_detect: 54/78 0.416s 0.000s
+im_detect: 55/78 0.413s 0.000s
+im_detect: 56/78 0.411s 0.000s
+im_detect: 57/78 0.407s 0.000s
+im_detect: 58/78 0.403s 0.000s
+im_detect: 59/78 0.400s 0.000s
+im_detect: 60/78 0.403s 0.000s
+im_detect: 61/78 0.399s 0.000s
+im_detect: 62/78 0.405s 0.000s
+im_detect: 63/78 0.402s 0.000s
+im_detect: 64/78 0.411s 0.000s
+im_detect: 65/78 0.409s 0.000s
+im_detect: 66/78 0.406s 0.000s
+im_detect: 67/78 0.402s 0.000s
+im_detect: 68/78 0.401s 0.000s
+im_detect: 69/78 0.401s 0.000s
+im_detect: 70/78 0.400s 0.000s
+im_detect: 71/78 0.399s 0.000s
+im_detect: 72/78 0.397s 0.000s
+im_detect: 73/78 0.402s 0.000s
+im_detect: 74/78 0.400s 0.000s
+im_detect: 75/78 0.397s 0.000s
+im_detect: 76/78 0.395s 0.000s
+im_detect: 77/78 0.394s 0.000s
+im_detect: 78/78 0.398s 0.000s
+Evaluating detections
+Writing text VOC results file
+VOC07 metric? Yes
+AP for text = 0.3425
+Mean AP = 0.3425
+~~~~~~~~
+Results:
+0.343
+0.343
+~~~~~~~~
+
+--------------------------------------------------------------
+Results computed with the **unofficial** Python eval code.
+Results should be very close to the official MATLAB eval code.
+Recompute with `./tools/reval.py --matlab ...` for your paper.
+-- Thanks, The Management
+--------------------------------------------------------------
+
+real	0m41.726s
+user	0m35.448s
+sys	0m7.212s
