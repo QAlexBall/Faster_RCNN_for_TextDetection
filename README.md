@@ -31,7 +31,7 @@ imagenet数据文件：https://pan.baidu.com/s/1UHlD7zpJyLO_5jHC27_ojw 密码：
  * Main存放的是图像物体识别的数据，Main里面有test.txt , train.txt, val.txt,trainval.txt.
 
 
-
+#### 数据制作
 直接将ICAR2011的训练集图片放入JPRGImages
 
 xml.py:  用于制作.xml文件
@@ -45,14 +45,14 @@ make
 ```
 
 
-测试模型
+##### 测试模型
 ```bash
 cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
 
 
-训练模型
+##### 训练模型
 ```bash
 cd $FRCN_ROOT
 ./experiments/scripts/faster_rcnn_end2end.sh  DEVICE   DEVICE_ID  VGG16 pascal_voc
