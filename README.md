@@ -28,7 +28,7 @@ imagenet数据文件：https://pan.baidu.com/s/1UHlD7zpJyLO_5jHC27_ojw 密码：
 
 * ImageSets文件夹 :  Action暂时不用  Layout暂时不用
 
-​			Main存放的是图像物体识别的数据，20类,Main里面有test.txt , train.txt, val.txt,trainval.txt.
+ * Main存放的是图像物体识别的数据，Main里面有test.txt , train.txt, val.txt,trainval.txt.
 
 
 
@@ -37,8 +37,6 @@ imagenet数据文件：https://pan.baidu.com/s/1UHlD7zpJyLO_5jHC27_ojw 密码：
 xml.py:  用于制作.xml文件
 
 generate_maintxt.py:  用于生成Main文件夹下的.txt文件
-
-
 
 构建Cython模块
 ```bash
