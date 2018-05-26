@@ -38,21 +38,21 @@ xml.py:  用于制作.xml文件
 
 generate_maintxt.py:  用于生成Main文件夹下的.txt文件
 
-构建Cython模块
+#### 构建Cython模块
 ```bash
 cd $FRCN_ROOT/lib
 make
 ```
 
 
-##### 测试模型
+#### 测试模型
 ```bash
 cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
 
 
-##### 训练模型
+#### 训练模型
 ```bash
 cd $FRCN_ROOT
 ./experiments/scripts/faster_rcnn_end2end.sh  DEVICE   DEVICE_ID  VGG16 pascal_voc
