@@ -32,11 +32,11 @@ imagenet数据文件：https://pan.baidu.com/s/1UHlD7zpJyLO_5jHC27_ojw 密码：
 
 
 #### 数据制作
-直接将ICAR2011的训练集图片放入JPRGImages
+* 直接将ICAR2011的训练集图片放入JPRGImages
 
-xml.py:  用于制作.xml文件
+* xml.py:  用于制作.xml文件
 
-generate_maintxt.py:  用于生成Main文件夹下的.txt文件
+* generate_maintxt.py:  用于生成Main文件夹下的.txt文件
 
 #### 构建Cython模块
 ```bash
