@@ -9,8 +9,8 @@
 * tesnsorflow_gpu, cython, python-opencv,  easydict,  etc.
 
 将ICDAR2011数据集简单制作成VOC2007格式, 放入Faster_RCNN
-
-ICDAR数据文件: https://pan.baidu.com/s/1iswBSW5UIvHcT7xq2Iur3g  密码：fjtt
+以下链接是处理好的ICDAR2011数据
+链接: https://pan.baidu.com/s/15vVdxmLI7uI1IAMOqJrHKQ 密码: asqb
 
 
 
