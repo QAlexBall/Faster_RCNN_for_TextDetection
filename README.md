@@ -14,9 +14,8 @@ ICDAR数据文件: https://pan.baidu.com/s/1iswBSW5UIvHcT7xq2Iur3g  密码：fjt
 
 
 
-将数据文件中的VGG_imagenet.npy放到Faster-RCNN_TF\data\pretrain_model文件夹下
-
-imagenet数据文件：https://pan.baidu.com/s/1UHlD7zpJyLO_5jHC27_ojw 密码：v3um
+将VGG_imagenet.npy放到Faster-RCNN_TF\data\pretrain_model文件夹下
+链接: https://pan.baidu.com/s/1z4xSXJk7U81SpPusqr0trA 密码: xjph
 
 
 
