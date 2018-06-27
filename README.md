@@ -46,16 +46,12 @@ cd $FRCN_ROOT/lib
 make
 ```
 
-
 #### 测试模型
 ```bash
 cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
-
 ![thumbnial.jpg](./result/thumbnial.jpg)
-
-
 #### 训练模型
 ```bash
 cd $FRCN_ROOT
