@@ -52,19 +52,13 @@ make
 cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
-
+![result202.jpg](./result/result202.jpg)
 
 #### 训练模型
 ```bash
 cd $FRCN_ROOT
 ./experiments/scripts/faster_rcnn_end2end.sh  DEVICE   DEVICE_ID  VGG16 pascal_voc
 ```
-
-![result166.jpg](./result/result166.jpg)
-
-![result195.jpg](./result/result195.jpg)
-
-![result202.jpg](./result/result202.jpg)
 
 
 
