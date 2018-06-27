@@ -52,7 +52,9 @@ make
 cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
-![result202.jpg](./result/result202.jpg)
+
+![thumbnial.jpg](./result/thumbnial.jpg)
+
 
 #### 训练模型
 ```bash
