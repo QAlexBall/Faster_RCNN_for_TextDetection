@@ -52,11 +52,8 @@ cd $FRCN_ROOT
 python ./tools/demo.py --model model_path
 ```
 ![thumbnial.jpg](./result/thumbnial.jpg)
-<<<<<<< HEAD
-***
-=======
 
->>>>>>> ce1c90d51102abd29aec2bb9bc5ccbeb327d75af
+***
 #### 训练模型
 ```bash
 cd $FRCN_ROOT
