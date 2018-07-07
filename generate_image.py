@@ -138,7 +138,7 @@ class LabelTool():
 
         print ('self.category =%d' % (self.category))
 
-        self.imageDir = os.path.join(r'h:\MyVOC\images', '%03d' % (self.category))
+        self.imageDir = os.path.join(r'/home/alex/000/', '%03d' % (self.category))
         print(self.imageDir)
         self.imageList = glob.glob(os.path.join(self.imageDir, '*.jpg'))
         if len(self.imageList) == 0:
@@ -152,12 +152,12 @@ class LabelTool():
         self.total = len(self.imageList)
 
         # set up output dir
-        self.outDir = os.path.join(r'h:\MyVOC\labels', '%03d' % (self.category))
+        self.outDir = os.path.join(r'/home/alex/000/labels', '%03d' % (self.category))
         if not os.path.exists(self.outDir):
             os.mkdir(self.outDir)
 
         # load example bboxes
-        self.egDir = os.path.join(r'h:\MyVOC\Examples', '%03d' % (self.category))
+        self.egDir = os.path.join(r'/home/alex/000/examples', '%03d' % (self.category))
         # if not os.path.exists(self.egDir):
         #   return
 

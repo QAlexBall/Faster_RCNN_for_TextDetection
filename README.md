@@ -32,10 +32,7 @@
 
  * Main存放的是图像物体识别的数据，Main里面有test.txt , train.txt, val.txt,trainval.txt.
 
-<<<<<<< HEAD
 ***
-=======
->>>>>>> ce1c90d51102abd29aec2bb9bc5ccbeb327d75af
 #### 数据制作
 * 直接将ICAR2011的训练集图片放入JPRGImages
 
