@@ -1,7 +1,7 @@
 ## Faster_RCNN for text detection
 ***
 
-####使用Faster_RCNN做文本检测
+#### 使用Faster_RCNN做文本检测
 
 软件支持:
 
