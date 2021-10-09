@@ -1,3 +1,4 @@
+# [Deprecated]
 ## Faster_RCNN for text detection
 ***
 
